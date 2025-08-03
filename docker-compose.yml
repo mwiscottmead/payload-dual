@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=payload
+      - POSTGRES_USER=payload
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    logging:
+      driver: none
+
+volumes:
+  postgres_data:
+  node_modules:
